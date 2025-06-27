@@ -1,0 +1,49 @@
+COMANDOS NO SERVIDOR
+
+Active Directory (AD DS):
+- dsquery user
+  → Lista todos os usuários no domínio.
+- net user nomeusuario /domain
+  → Mostra os detalhes de um usuário do domínio.
+- nltest /dclist:engtel.local.co.mz
+  → Lista os controladores de domínio do domínio especificado.
+
+DNS:
+- nslookup
+  → Entra no modo interativo do DNS (permite testar a resolução de nomes).
+- nslookup nome-do-servidor
+  → Testa se o DNS está resolvendo nomes corretamente.
+
+DHCP:
+- netsh dhcp show server
+  → Mostra os servidores DHCP configurados.
+- netsh dhcp server show scope
+  → Mostra os escopos DHCP existentes.
+- netsh dhcp server scope 192.168.120.0 show clients
+  → Mostra os clientes que receberam IP do escopo.
+
+Verificar Serviços Ativos (verificar se estão "RUNNING"):
+- sc query adws              → Serviço do Active Directory Web Services
+- sc query dns               → Serviço do DNS
+- sc query dhcpserver        → Serviço do DHCP
+- sc query remoteaccess      → Serviço de Acesso Remoto (VPN)
+
+
+COMANDOS NO CLIENTE
+
+- Entrar no domínio
+  → Verificar se o computador está corretamente associado ao domínio.
+
+- Verificar atribuição de IP via DHCP
+  → Checar se o IP foi atribuído corretamente (usar ipconfig ou ipconfig /all).
+
+- Testar resolução DNS
+  → Usar nslookup para validar a resolução de nomes.
+
+- Conectar-se à VPN
+  → Verificar se há comunicação segura com a rede da empresa.
+
+- Validar comunicação com o servidor
+  → Usar:
+    - ping nome-do-servidor ou ping IP
+    - Testar acesso remoto (RDP) ou compartilhamento de arquivos.
